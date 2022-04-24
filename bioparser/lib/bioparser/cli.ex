@@ -1,5 +1,6 @@
 defmodule Bioparser.CLI do
   @default_url "https://www.ebi.ac.uk/metagenomics/api/v1/"
+  require Logger
 
   @moduledoc """
   Handle the comand line parsing and the dispatch to the
@@ -7,6 +8,7 @@ defmodule Bioparser.CLI do
   MGnify API REST methods
   """
   def main(argv) do
+    Logger.info("Fetching biodata")
     argv
     |> parse_args
     |> process
