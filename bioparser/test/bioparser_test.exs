@@ -12,4 +12,15 @@ defmodule BioparserTest do
   test "count is defaulted if none url given" do
     assert parse_args([]) == { "https://www.ebi.ac.uk/metagenomics/api/v1/" }
     end
+
+  test "parse data structure" do
+
+    assert Poison.Parser.parse!("""
+    {
+      "data": {
+          "biomes": "https://www.ebi.ac.uk/metagenomics/api/v1/biomes"
+      }
+    }
+    """, %{}) == %{"data" => %{"biomes" => "https://www.ebi.ac.uk/metagenomics/api/v1/biomes"}}
+  end
 end
