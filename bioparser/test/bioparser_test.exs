@@ -23,4 +23,27 @@ defmodule BioparserTest do
     }
     """, %{}) == %{"data" => %{"biomes" => "https://www.ebi.ac.uk/metagenomics/api/v1/biomes"}}
   end
+
+  test "parse datta" do
+    l = Poison.Parser.parse!("""
+    {
+      "data": {
+          "biomes": "https://www.ebi.ac.uk/metagenomics/api/v1/biomes"
+      }
+    }
+    """, %{})
+    assert l["data"] == %{"biomes" => "https://www.ebi.ac.uk/metagenomics/api/v1/biomes"}
+  end
+
+  test "parse domain url" do
+    l = Poison.Parser.parse!("""
+    {
+      "data": {
+          "biomes": "https://www.ebi.ac.uk/metagenomics/api/v1/biomes"
+      }
+    }
+    """, %{})
+    assert l["data"]["biomes"] == "https://www.ebi.ac.uk/metagenomics/api/v1/biomes"
+  end
+
 end

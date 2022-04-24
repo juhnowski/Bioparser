@@ -28,7 +28,7 @@ task.
 
 Fetch some url:
 ```
-iex -S mix
+c
 Bioparser.MGnify.fetch("https://www.ebi.ac.uk/metagenomics/api/v1/")
 ```
 
@@ -38,3 +38,19 @@ mix deps
 mix deps.get
 mix deps
 ```
+
+# Build
+```
+mix escript.build
+```
+s
+# Usage
+```
+./bioparser :help
+```
+
+# Run
+```
+./bioparser :help
+```
+will return:

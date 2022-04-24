@@ -6,7 +6,7 @@ defmodule Bioparser.CLI do
   various functions that end up generating a table of the
   MGnify API REST methods
   """
-  def run(argv) do
+  def main(argv) do
     argv
     |> parse_args
     |> process
@@ -46,7 +46,7 @@ defmodule Bioparser.CLI do
 
   def process(:help) do
     IO.puts """
-    usage: bioparser [ api_url | #{@default_url} ]
+    usage: ./bioparser
     """
     System.halt(0)
     end
