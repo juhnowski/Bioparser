@@ -53,6 +53,17 @@ defmodule Bioparser.CLI do
 
     def process({url}) do
       Bioparser.MGnify.fetch(url)
+        |> decode_response()
+        |> fetch_domains(list)
     end
 
+    def decode_response({:ok, body}), do: body
+    def decode_response({:error, error}) do
+      IO.puts "Error fetching: #{error["message"]}"
+      System.halt(2)
+    end
+
+    def fetch_domains(list) do
+
+    end
 end

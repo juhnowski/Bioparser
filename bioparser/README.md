@@ -26,6 +26,12 @@ mix test
 ``` 
 task.
 
+Fetch some url:
+```
+iex -S mix
+Bioparser.MGnify.fetch("https://www.ebi.ac.uk/metagenomics/api/v1/")
+```
+
 # Update dependencies
 ```
 mix deps
