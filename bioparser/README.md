@@ -19,3 +19,16 @@ Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_do
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at <https://hexdocs.pm/bioparser>.
 
+# Test
+To run our tests, we’ll use the 
+```
+mix test
+``` 
+task.
+
+# Update dependencies
+```
+mix deps
+mix deps.get
+mix deps
+```
